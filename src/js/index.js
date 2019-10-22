@@ -13,6 +13,7 @@ const state = {};
 state.search = new Search('New Delhi');
 
 document.querySelector('.search__btn').addEventListener('click', async e => {
+  e.preventDefault();
   const query = document.querySelector('#search__input').value;
   try {
     const result = await state.search.getResults(query);
