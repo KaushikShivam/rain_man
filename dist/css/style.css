@@ -3,11 +3,11 @@
 
 body {
   background-color: #2196F3;
-}
-
-.main {
-  width: 480px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
 }
 
 /* Searchbar and button */
