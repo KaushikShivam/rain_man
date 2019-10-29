@@ -44,9 +44,25 @@ const renderIcon = icon => {
     default:
       iconClass = '';
   }
+  elements.weatherIcon.className = '';
   iconClass.split(' ').forEach(el => {
     elements.weatherIcon.classList.add(el);
   });
+};
+
+const changeBackground = temp => {
+  let backgroundClass = '';
+  if (temp >= 80) {
+    backgroundClass = 'hot';
+  } else if (temp >= 70) {
+    backgroundClass = 'warm';
+  } else if (temp >= 60) {
+    backgroundClass = 'cool';
+  } else {
+    backgroundClass = 'cold';
+  }
+  elements.body.className = '';
+  elements.body.classList.add(color);
 };
 
 const clearDaily = () => {
@@ -54,12 +70,13 @@ const clearDaily = () => {
 };
 
 const renderMain = item => {
+  renderIcon(item.icon);
+  changeBackground(item.temp);
   elements.dateLabel.textContent = item.getDay(item.dt);
   elements.descriptionLabel.textContent = item.description;
   elements.windLabel.textContent = `Wind: ${item.wind}mph`;
   elements.humidityLabel.textContent = `Humidity: ${item.humidity}mph`;
   elements.numLabel.textContent = item.temp;
-  renderIcon(item.icon);
 };
 
 const renderDaily = array => {

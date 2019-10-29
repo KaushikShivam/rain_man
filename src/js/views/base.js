@@ -1,4 +1,5 @@
 export const elements = {
+  body: document.getElementById('body'),
   searchInput: document.getElementById('search'),
   searchBtn: document.getElementById('button'),
   cityLabel: document.getElementById('city'),
