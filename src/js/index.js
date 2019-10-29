@@ -1,5 +1,7 @@
-// index.js acts as the controller as the project is small
+import { elements } from './views/base';
 import Search from './models/Search';
+import * as formView from './views/formView';
+import Forecast from './models/Forcast';
 
 /** Global state of the app
  * - Search object
@@ -9,17 +11,33 @@ const state = {};
 /**
  * SEARCH CONTROLLER
  */
+const searchController = async () => {
+  // 1. Get query from the view
+  const input = formView.getInput();
+  if (input) {
+    // 2. store the query in the global state
+    state.search = new Search(input);
+    // 3. Clear input
+    formView.clearInput();
+    // 4. Might want to add logic for a loader here
 
-// state.search = new Search('New Delhi');
+    try {
+      // 5. Search for the city
+      await state.search.getResults();
+      // 6. Create Forecase object
+      const { city, list } = state.search.result;
+      state.forecast = new Forecast(city.name, city.country, list);
+      // console.log(state.forecast);
+    } catch (error) {
+      //Will show 404 later
+      alert("Couldn't find the city...");
+    }
+  } else {
+    alert('Enter a valid city name');
+  }
+};
 
-// document.querySelector('.search__btn').addEventListener('click', async e => {
-//   e.preventDefault();
-//   const query = document.querySelector('#search__input').value;
-//   try {
-//     const result = await state.search.getResults(query);
-//     console.log(result);
-//   } catch (error) {
-//     // eslint-disable-next-line no-alert
-//     alert(error);
-//   }
-// });
+elements.searchBtn.addEventListener('click', e => {
+  e.preventDefault();
+  searchController();
+});

@@ -10,7 +10,6 @@ export default class Search {
       const res = await fetch(`${BASE_URL}q=${this.query}&appid=${KEY}`);
       const data = await res.json();
       this.result = data;
-      console.log(data);
     } catch (error) {
       alert(error);
     }
