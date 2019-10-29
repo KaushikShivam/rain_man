@@ -10,6 +10,7 @@ body {
   margin: 0 auto;
 }
 
+/* Searchbar and button */
 .searchbar,
 .button {
   height: 45px;
@@ -79,8 +80,11 @@ body {
 .button {
   float: right;
   width: 100px;
+  cursor: pointer;
 }
 
+
+/* Typography */
 h1,
 h2,
 h3,
@@ -93,4 +97,9 @@ h4 {
   letter-spacing: 0.025em;
   margin: 0;
   padding: 0;
+}
+
+/* Utility classes */
+.transparent {
+  background: transparent;
 }
