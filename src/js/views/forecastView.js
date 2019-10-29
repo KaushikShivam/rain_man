@@ -1,6 +1,6 @@
 import elements from './base';
 
-const renderIcon = icon => {
+const renderIcon = (icon) => {
   let iconClass = '';
   switch (icon) {
     case '01d':
@@ -45,12 +45,12 @@ const renderIcon = icon => {
       iconClass = '';
   }
   elements.weatherIcon.className = '';
-  iconClass.split(' ').forEach(el => {
+  iconClass.split(' ').forEach((el) => {
     elements.weatherIcon.classList.add(el);
   });
 };
 
-const changeBackground = temp => {
+const changeBackground = (temp) => {
   let backgroundClass = '';
   if (temp >= 80) {
     backgroundClass = 'hot';
@@ -82,7 +82,7 @@ const renderMain = (item, tempType) => {
 const renderDaily = (array, tempType) => {
   clearDaily();
   let dailyStr = '';
-  array.forEach(item => {
+  array.forEach((item) => {
     const str = `
     <div class='block'>
       <h3 class='secondary'>${item.getDay(item.dt).substring(0, 3)}</h3>
@@ -94,7 +94,7 @@ const renderDaily = (array, tempType) => {
   elements.forecastLabel.insertAdjacentHTML('beforeend', dailyStr);
 };
 
-const changeHighlight = tempType => {
+const changeHighlight = (tempType) => {
   if (tempType === 'fahrenheit') {
     elements.fahrenheitBtn.classList.add('active');
     elements.celsiusBtn.classList.remove('active');

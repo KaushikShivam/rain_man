@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import elements from './views/base';
 import Search from './models/Search';
 import * as formView from './views/formView';
@@ -46,21 +47,21 @@ const searchController = async (query = 'London') => {
 
 searchController();
 
-const switchTempType = e => {
+const switchTempType = (e) => {
   e.preventDefault();
   state.tempType = e.target.id;
   renderView(state.forecast, state.tempType);
 };
 
-elements.searchBtn.addEventListener('click', e => {
+elements.searchBtn.addEventListener('click', (e) => {
   e.preventDefault();
   searchController();
 });
 
-elements.celsiusBtn.addEventListener('click', e => {
+elements.celsiusBtn.addEventListener('click', (e) => {
   switchTempType(e);
 });
 
-elements.fahrenheitBtn.addEventListener('click', e => {
+elements.fahrenheitBtn.addEventListener('click', (e) => {
   switchTempType(e);
 });

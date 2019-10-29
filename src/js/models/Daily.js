@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 export default class Daily {
   constructor(temp, description, wind, humidity, dt, icon, max, min) {
     this.temp = temp;
@@ -17,10 +18,6 @@ export default class Daily {
   }
 
   getCorrectTemp(temp, type) {
-    if (type === 'fahrenheit') {
-      return temp;
-    } else if ('celsius') {
-      return Math.round((temp - 32) * (5 / 9));
-    }
+    return type === 'celsius' ? Math.round((temp - 32) * (5 / 9)) : temp;
   }
 }

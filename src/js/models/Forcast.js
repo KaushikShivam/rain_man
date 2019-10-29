@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import Daily from './Daily';
 
 export default class Forecast {
@@ -17,7 +18,6 @@ export default class Forecast {
     return res;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   createDaily(item) {
     const temp = Math.round(item.main.temp);
     const { description } = item.weather[0];

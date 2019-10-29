@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { KEY, BASE_URL } from '../config';
 
 export default class Search {
