@@ -11,7 +11,8 @@ It is a minimal weather project that I built using modern JS.
 - Babel
 - Webpack
 - ESlint
-- npm package managers
+- npm package manager
+- ES6
 
 ## Contact
 - [Shivam Kaushik](shivamkaushikofficial@gmail.com)
