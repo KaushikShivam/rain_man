@@ -99,7 +99,63 @@ h4 {
   padding: 0;
 }
 
-/* Utility classes */
-.transparent {
-  background: transparent;
+.panel {
+  width: 100%;
+  display: inline-block;
+}
+
+.weather {
+  width: 100%;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.city {
+  text-align: left;
+  border-bottom: solid thin white;
+  text-transform: uppercase;
+  color: #E8E8E8;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.group {
+  width: 165px;
+  margin-bottom: 20px;
+  text-align: right;
+  float: right;
+  clear: both;
+}
+
+.temp {
+  font-size: 4.5em;
+  font-weight: 300;
+  line-height: 0.75;
+}
+
+.celsius,
+.fahrenheit,
+.divider {
+  font-size: 1.75rem;
+  vertical-align: super;
+}
+
+.divider {
+  margin: 0 0.05em;
+}
+
+.forecast {
+  display: table;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.block {
+  display: table-cell;
+  padding: 1.5em 0 0 0;
+  text-align: center;
+}
+
+.high {
+  font-weight: 300;
+  margin: 0.25em 0;
 }
