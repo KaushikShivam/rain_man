@@ -1,4 +1,4 @@
-export const elements = {
+export default {
   body: document.getElementById('body'),
   searchInput: document.getElementById('search'),
   searchBtn: document.getElementById('button'),
@@ -10,8 +10,6 @@ export const elements = {
   numLabel: document.getElementById('num'),
   forecastLabel: document.getElementById('forecast'),
   weatherIcon: document.getElementById('condition'),
-};
-
-export const changeHighlight = () => {
-  console.log('changed');
+  fahrenheitBtn: document.getElementById('fahrenheit'),
+  celsiusBtn: document.getElementById('celsius'),
 };

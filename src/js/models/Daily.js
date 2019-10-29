@@ -15,4 +15,12 @@ export default class Daily {
     const d = new Date(dt * 1000);
     return days[d.getDay()];
   }
+
+  getCorrectTemp(temp, type) {
+    if (type === 'fahrenheit') {
+      return temp;
+    } else if ('celsius') {
+      return Math.round((temp - 32) * (5 / 9));
+    }
+  }
 }

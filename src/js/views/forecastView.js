@@ -1,4 +1,4 @@
-import { elements } from './base';
+import elements from './base';
 
 const renderIcon = icon => {
   let iconClass = '';
@@ -69,36 +69,44 @@ const clearDaily = () => {
   elements.forecastLabel.innerHTML = '';
 };
 
-const renderMain = item => {
+const renderMain = (item, tempType) => {
   renderIcon(item.icon);
   changeBackground(item.temp);
   elements.dateLabel.textContent = item.getDay(item.dt);
   elements.descriptionLabel.textContent = item.description;
   elements.windLabel.textContent = `Wind: ${item.wind}mph`;
   elements.humidityLabel.textContent = `Humidity: ${item.humidity}mph`;
-  elements.numLabel.textContent = item.temp;
+  elements.numLabel.textContent = item.getCorrectTemp(item.temp, tempType);
 };
 
-const renderDaily = array => {
+const renderDaily = (array, tempType) => {
   clearDaily();
   let dailyStr = '';
   array.forEach(item => {
     const str = `
     <div class='block'>
       <h3 class='secondary'>${item.getDay(item.dt).substring(0, 3)}</h3>
-      <h2 class='high'>${item.max}</h2>
-      <h4 class='secondary'>${item.min}</h4>
+      <h2 class='high'>${item.getCorrectTemp(item.max, tempType)}</h2>
+      <h4 class='secondary'>${item.getCorrectTemp(item.min, tempType)}</h4>
     </div>`;
     dailyStr += str;
   });
   elements.forecastLabel.insertAdjacentHTML('beforeend', dailyStr);
 };
 
-export const renderUI = ({ name, country, daily }) => {
-  //1. Render city name
+const changeHighlight = tempType => {
+  if (tempType === 'fahrenheit') {
+    elements.fahrenheitBtn.classList.add('active');
+    elements.celsiusBtn.classList.remove('active');
+  } else if (tempType === 'celsius') {
+    elements.fahrenheitBtn.classList.remove('active');
+    elements.celsiusBtn.classList.add('active');
+  }
+};
+
+export default ({ name, country, daily }, tempType) => {
   elements.cityLabel.textContent = `${name}, ${country}`;
-  //2. Render Main
-  renderMain(daily[0]);
-  //3. Render daily
-  renderDaily(daily.slice(1));
+  renderMain(daily[0], tempType);
+  renderDaily(daily.slice(1), tempType);
+  changeHighlight(tempType);
 };
