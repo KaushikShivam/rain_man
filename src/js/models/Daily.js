@@ -9,4 +9,10 @@ export default class Daily {
     this.max = max;
     this.min = min;
   }
+
+  getDay(dt) {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const d = new Date(dt * 1000);
+    return days[d.getDay()];
+  }
 }

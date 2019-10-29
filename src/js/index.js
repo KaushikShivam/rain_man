@@ -1,6 +1,7 @@
 import { elements } from './views/base';
 import Search from './models/Search';
 import * as formView from './views/formView';
+import * as forecastView from './views/forecastView';
 import Forecast from './models/Forcast';
 
 /** Global state of the app
@@ -27,10 +28,11 @@ const searchController = async () => {
       // 6. Create Forecase object
       const { city, list } = state.search.result;
       state.forecast = new Forecast(city.name, city.country, list);
-      // console.log(state.forecast);
+      console.log(state.forecast);
+      // 7. Render UI
+      forecastView.renderUI(state.forecast);
     } catch (error) {
-      //Will show 404 later
-      alert("Couldn't find the city...");
+      alert(error);
     }
   } else {
     alert('Enter a valid city name');

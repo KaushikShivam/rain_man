@@ -23,10 +23,10 @@ export default class Forecast {
     const { description } = item.weather[0];
     const wind = item.wind.speed;
     const { humidity } = item.main;
-    const date = item.dt_txt;
+    const date = item.dt;
     const { icon } = item.weather[0];
-    const max = item.main.temp_max;
-    const min = item.main.temp_min;
+    const max = Math.round(item.main.temp_max);
+    const min = Math.round(item.main.temp_min);
     return new Daily(temp, description, wind, humidity, date, icon, max, min);
   }
 }
