@@ -8,6 +8,7 @@ export const elements = {
   humidityLabel: document.getElementById('humidity'),
   numLabel: document.getElementById('num'),
   forecastLabel: document.getElementById('forecast'),
+  weatherIcon: document.getElementById('condition'),
 };
 
 export const changeHighlight = () => {
