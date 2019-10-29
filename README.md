@@ -13,6 +13,7 @@ It is a minimal weather project that I built using modern JS.
 - ESlint
 - npm package manager
 - ES6
+- Modules
 
 ## Contact
 - [Shivam Kaushik](shivamkaushikofficial@gmail.com)
