@@ -62,7 +62,7 @@ const changeBackground = temp => {
     backgroundClass = 'cold';
   }
   elements.body.className = '';
-  elements.body.classList.add(color);
+  elements.body.classList.add(backgroundClass);
 };
 
 const clearDaily = () => {
