@@ -8,7 +8,9 @@ export default class Search {
 
   async getResults() {
     try {
-      const res = await fetch(`${BASE_URL}q=${this.query}&appid=${KEY}&units=imperial`);
+      const res = await fetch(
+        `${BASE_URL}q=${this.query}&appid=${KEY}&units=imperial`
+      );
       const data = await res.json();
       this.result = data;
     } catch (error) {
