@@ -1,6 +1,6 @@
 # Restaurant Page
 
-[Restaurant Page](https://raw.githack.com/KaushikShivam/restaurant_page/feature-restaurant/dist/index.html) is a minimal weather app built using modern JS as well as babel and webpack.
+[Restaurant Page](https://priceless-cori-e1d4a3.netlify.com/) is a minimal weather app built using modern JS as well as babel and webpack.
 ![Screenshot](screenshot.png)
 
 ## Table of content
