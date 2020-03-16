@@ -1,6 +1,6 @@
-# Restaurant Page
+# Rainman
 
-[Restaurant Page](https://priceless-cori-e1d4a3.netlify.com/) is a minimal weather app built using modern JS as well as babel and webpack.
+[Rainman](https://priceless-cori-e1d4a3.netlify.com/) is a minimal weather app built using modern JS as well as babel and webpack.
 ![Screenshot](screenshot.png)
 
 ## Table of content
